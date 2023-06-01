@@ -4,12 +4,21 @@ import Button from "./components/Button";
 
 function Header({ title }) {
   const HeaderStyle = { color: "white", backgroundColor: "black" };
+  const onClickAdd = () => {
+    console.log('clicked Add')
+  }
+  const onClickDelete = () => {
+    console.log('clicked Delete')
+  }
+  const onClickCancel = () => {
+    console.log('clicked cancel')
+  }
   return (
     <header className="header">
       <h1 style={HeaderStyle}>{title}</h1>
-      <Button color="green" text="add"/>
-      <Button color="red" text="delete"/>
-      <Button color="gray" text="cancel"/>
+      <Button color="green" text="add" onClick={onClickAdd}/>
+      <Button color="red" text="delete" onClick={onClickDelete}/>
+      <Button color="gray" text="cancel" onClick={onClickCancel}/>
     </header>
   );
 }
