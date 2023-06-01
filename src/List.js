@@ -1,20 +1,19 @@
-import React from 'react'
+import React from "react";
+import Student from "./Student";
 
-function List() {
-const students = [
-    {id:1,name:"Clodia",present:true},
-    {id:2,name:"Romaric",present:false},
-    {id:3,name:"Ida Nen",present:true},
-]
-
+function List(props) {
   return (
-    <div>
-      {students.map((student) => (
-        <h3>{student.name}</h3>
-      )
-      )}
-    </div>
-  )
+    <>
+      {props.students.map((student) => (
+        <Student
+          Key={student.id}
+          student={student}
+          onDelete={props.onDelete}
+          onTogglePresence={props.onTogglePresence}
+        />
+      ))}
+    </>
+  );
 }
 
-export default List
+export default List;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Button from "./components/Button";
 
 function Header({ title }) {
-  const HeaderStyle = { color: "white", backgroundColor: "black" };
+  const HeaderStyle = { color: "red" };
   const onClickAdd = () => {
     console.log('clicked Add')
   }
