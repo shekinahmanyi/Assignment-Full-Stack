@@ -20,9 +20,44 @@ const onSubmit = (e) => {
 
   return (
     <div>
-      
+      <form className='add-form' onSubmit={onSubmit}>
+       <div className='form-action'>
+        <label>Matriculation</label>
+        <input
+        type='text'
+        placeholder='matriculation'
+        value={matriculation}
+        onChange={(e) => setMatriculation(e.target.value)}
+        />
+       </div>
+       <div className='form-action'>
+        <label>Name</label>
+        <input
+        type='text'
+        placeholder='Name'
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
+       </div>
+       <div className='form-action'>
+        <label>Present</label>
+        <input
+        type='text'
+        placeholder='present'
+        value={present}
+        onChange={(e) => setPresent(e.target.value)}
+        />
+       </div>
+      </form>
     </div>
   )
 }
+AddStudent.defaultProps = {
+    
+  };
+  AddStudent.propTypes = {
+    text: PropTypes.string.isRequired,
+  
+  };
 
 export default AddStudent
