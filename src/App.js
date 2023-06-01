@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./Header";
 import List from "./List";
 import { useState } from "react";
+import AddStudent from "./components/AddStudent";
 
 function App() {
   const title = "Class List"
@@ -11,6 +12,11 @@ function App() {
     {id:2,Matriculation:'CT22A023',name:"Romaric",present:false,status:4/10},
     {id:3,Matriculation:'CT22A257',name:"Ida Nen",present:true,status:6/10},
 ]);
+
+//Add a Student
+const AddOneStudent = (student) => {
+  console.log("Student added:",student)
+}
   
 //Delete Student 
 const deleteStudent = (id) => {
@@ -20,6 +26,7 @@ const deleteStudent = (id) => {
   return (
     <div className="container">
       <Header title={title}/>
+      <AddStudent OnAdd={AddOneStudent}/>
       {students.length>0?
       <List students={students} onDelete={deleteStudent}/>:
       ('No student')}

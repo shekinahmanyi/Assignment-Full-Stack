@@ -21,7 +21,7 @@ const onSubmit = (e) => {
   return (
     <div>
       <form className='add-form' onSubmit={onSubmit}>
-       <div className='form-action'>
+       <div className='form-control'>
         <label>Matriculation</label>
         <input
         type='text'
@@ -30,7 +30,7 @@ const onSubmit = (e) => {
         onChange={(e) => setMatriculation(e.target.value)}
         />
        </div>
-       <div className='form-action'>
+       <div className='form-control'>
         <label>Name</label>
         <input
         type='text'
@@ -39,7 +39,7 @@ const onSubmit = (e) => {
         onChange={(e) => setName(e.target.value)}
         />
        </div>
-       <div className='form-action'>
+       <div className='form-control'>
         <label>Present</label>
         <input
         type='text'
