@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
+import Button from "./components/Button";
 
-function Header() {
+function Header({ title }) {
+  const HeaderStyle = { color: "white", backgroundColor: "black" };
   return (
-    <div>
-      
-    </div>
-  )
+    <header className="header">
+      <h1 style={HeaderStyle}>{title}</h1>
+      <Button color="green" text="add"/>
+      <Button color="red" text="delete"/>
+      <Button color="gray" text="cancel"/>
+    </header>
+  );
 }
 
-export default Header
+Header.defaultProps = {
+  title: "Students Follow Up",
+};
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+export default Header;
