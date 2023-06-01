@@ -27,12 +27,24 @@ function App() {
     setStudents(students.filter((student) => student.id !== id));
   }
 
+  //Toggle Student Present or Absent
+  const onTogglePresence = (id) => {
+
+    setStudents(students.map((student) => {
+      if (student.id === id) {
+        return { ...student, present: !student.present };
+      }
+      return student;
+    }));
+
+  }
+
   return (
     <div className="container">
       <Header title={title} />
       <AddStudent onAdd={AddOneStudent} />
       {students.length > 0 ? (
-        <List students={students} onDelete={deleteStudent} />
+        <List students={students} onDelete={deleteStudent} onToggle={onTogglePresence}/>
       ) : (
         'No student'
       )}
