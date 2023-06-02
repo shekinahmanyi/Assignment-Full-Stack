@@ -10,15 +10,12 @@ function Header({ title }) {
   const onClickDelete = () => {
     console.log('clicked Delete')
   }
-  const onClickCancel = () => {
-    console.log('clicked cancel')
-  }
   return (
     <header className="header">
       <h1 style={HeaderStyle}>{title}</h1>
       <Button color="green" text="add" onClick={onClickAdd}/>
-      <Button color="red" text="delete" onClick={onClickDelete}/>
-      <Button color="gray" text="cancel" onClick={onClickCancel}/>
+      <Button color="red" text="flash" onClick={onClickDelete}/>
+      
     </header>
   );
 }

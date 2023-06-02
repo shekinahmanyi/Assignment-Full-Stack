@@ -13,18 +13,18 @@ const Student = ({ student, onDelete, onTogglePresence }) => {
           <input
             style={{display:"inline-block",marginRight:'1em'}}
             type="checkbox"
-            checked={student.present}
+            checked={student.available}
             onChange={handlePresenceClick}
           />
-          <span style={{fontWeight:'bold',color:"blue",marginRight:'1em'}}>{student.matriculation}</span>
-          {student.name}
+          <span style={{fontWeight:'bold',color:"blue",marginRight:'1em'}}>{student.name}</span>
+          {student.Quantity}
         </span>
         <FaTimes
         style={{color:'red',cursor:'pointer'}}
         onClick= {()=> onDelete(student.id)}
         />
       </h3>
-      <p style={{color:'green'}}>Status: {student.status}</p>
+      <p style={{color:'green'}}>Available:yes </p>
     </div>
   );
 };
